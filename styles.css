@@ -1,0 +1,369 @@
+/* ===================================
+   REPAIR FORM STYLES
+   =================================== */
+
+/* === GLOBAL STYLES === */
+body {
+  font-family: 'Prompt', sans-serif;
+  background-color: #f4f7f6;
+  line-height: 1.6;
+}
+
+/* === LOGO STYLES === */
+.logo {
+  display: block;
+  max-width: 100px;     /* ขนาดสูงสุด 100px */
+  width: 20vw;          /* ขนาดกว้างตาม 20% ของความกว้างหน้าจอ */
+  height: auto;         /* รักษาสัดส่วนภาพอัตโนมัติ */
+  margin: 0 auto 2rem;  /* กึ่งกลางแนวนอน และ margin ล่าง 2rem */
+  object-fit: contain;  /* ป้องกันรูปเสียสัดส่วน */
+}
+
+/* === CONTAINER STYLES === */
+.container {
+  max-width: 600px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* === TYPOGRAPHY === */
+.form-title {
+  color: #00923F;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.preview-title {
+  color: #00923F;
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  margin-top: 1.4rem;
+  display: block;
+}
+
+/* === PROGRESS BAR === */
+.progress-custom {
+  height: 8px;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  background-color: #d3e4d8;
+}
+
+.progress-bar-custom {
+  background-color: #00923F;
+  transition: width 0.3s ease;
+}
+
+/* === FORM ELEMENTS === */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-select,
+.form-control {
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  box-shadow: none;
+  border: 1.5px solid #ced4da;
+  transition: border-color 0.3s ease;
+}
+
+.form-select:focus,
+.form-control:focus {
+  border-color: #00923F;
+  box-shadow: 0 0 5px rgba(56, 176, 0, 0.4);
+  outline: none;
+}
+
+.form-select.is-invalid,
+.form-control.is-invalid {
+  border-color: #dc3545;
+}
+
+.invalid-feedback {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: #dc3545;
+}
+
+/* === BUTTON STYLES === */
+.btn-action {
+  background-color: #00923F;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 146, 63, 0.35);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-logout {
+  display: none;
+  /*
+  background-color: rgb(170, 2, 25); 
+  color: white; 
+  border: none; 
+  border-radius: 6px; 
+  padding: 6px 12px; 
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  */
+}
+
+.btn-logout:hover {
+  background-color: rgb(180, 20, 40); /* สีแดงสว่างขึ้นตอน hover */
+}
+
+.btn-action:hover,
+.btn-action:focus {
+  background-color: #007c2f;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 146, 63, 0.4);
+}
+
+.btn-secondary {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-1px);
+}
+
+/* === FORM NAVIGATION === */
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.form-navigation .w-100 {
+  width: 100% !important;
+}
+
+/* === STEP MANAGEMENT === */
+.step {
+  display: none;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.step.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === IMAGE HANDLING === */
+.image-preview-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  min-height: 60px;
+}
+
+.img-thumb {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.img-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-color: #00923F;
+}
+
+.img-thumb:focus {
+  outline: 2px solid #00923F;
+  outline-offset: 2px;
+}
+
+/* === PREVIEW SECTION === */
+.preview-box {
+  background: #e8f5e9;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: inset 0 0 10px rgba(0, 146, 63, 0.1);
+  font-size: 1rem;
+  line-height: 1.6;
+  border: 1px solid #c8e6c9;
+}
+
+.preview-item {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 146, 63, 0.1);
+}
+
+.preview-item:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.preview-item strong {
+  color: #00923F;
+  display: inline-block;
+  min-width: 120px;
+}
+
+.preview-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* === MODAL STYLES === */
+.modal-custom {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header-success {
+  background-color: #00923F !important;
+  color: white;
+  border-radius: 12px 12px 0 0;
+}
+
+.modal-body-custom {
+  text-center;
+  font-size: 1.1rem;
+  padding: 2rem;
+}
+
+.modal-footer-custom {
+  justify-content: center;
+  border: 0;
+  padding-bottom: 2rem;
+}
+
+.modal-img {
+  width: 100%;
+  border-radius: 8px;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .logo {
+    width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+  }
+  
+  .form-navigation {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .form-navigation .btn {
+    width: 100%;
+  }
+  
+  .img-thumb {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .preview-item strong {
+    min-width: auto;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .form-title {
+    font-size: 1.3rem;
+  }
+  
+  .modal-body-custom {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+/* === ACCESSIBILITY === */
+@media (prefers-reduced-motion: reduce) {
+  .step,
+  .btn-action,
+  .btn-secondary,
+  .img-thumb,
+  .progress-bar-custom {
+    transition: none;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .form-select,
+  .form-control {
+    border-width: 2px;
+  }
+  
+  .btn-action {
+    border: 2px solid #fff;
+  }
+}
+
+/* === PRINT STYLES === */
+@media print {
+  .form-navigation,
+  .modal {
+    display: none !important;
+  }
+  
+  .container {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  
+  .step {
+    display: block !important;
+  }
+}
